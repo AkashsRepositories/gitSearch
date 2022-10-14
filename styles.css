@@ -11,6 +11,7 @@
 
     --regular-spacing: 1rem;
     --medium-spacing: 1.5rem;
+    --large-spacing: 2rem;
 }
 
 body{
@@ -36,11 +37,6 @@ body{
     align-items: center;
 }
 
-#header .logo{
-    display: flex;
-    align-items: center;
-}
-
 #header .theme-change{
     background-color: unset;
     border: unset;
@@ -54,22 +50,28 @@ body{
 }
 
 .main .user-details{
+    background-color: var(--secondary-bg-color);
+    padding: var(--large-spacing);
+    border-radius: 10px;
     display: grid;
-    grid-template-columns: 100px 150px 150px;
+    grid-template-columns: 1fr 1.5fr 1.5fr;
     grid-template-areas: 
     "avatar name date"
     "avatar username username"
     "avatar bio bio"
     "avatar stats stats"
     "avatar location twitter"
-    "avatar org org"
+    "avatar company company"
     ;
+    gap: var(--regular-spacing);
 }
 
 .user-details .user-avatar{
     width: 100%;
     height: auto;
     grid-area: avatar;
+    /* round  image*/
+    border-radius: 50%;
 }
 
 .user-details .name {
@@ -90,6 +92,14 @@ body{
 
 .user-details .user-stats{
     grid-area: stats;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.user-details .user-location, .user-details .twitter-handle, .user-details .company{
+    display: flex;
+    align-items: center;
+    gap: 2px;
 }
 
 .user-details .user-location{
@@ -100,8 +110,8 @@ body{
     grid-area: twitter;
 }
 
-.user-details .organization{
-    grid-area: org;
+.user-details .company{
+    grid-area: company;
 }
 
 .main .search-container {
