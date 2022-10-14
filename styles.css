@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --primary-text-color: rgb(239 243 247 / 1);
+    --primary-bg-color: rgb(20 28 47 / 1);
+    --secondary-bg-color: rgb(31 42 72 / 1);
+
+    --regular-spacing: 1rem;
+    --medium-spacing: 1.5rem;
+}
+
+body{
+    color: var(--primary-text-color);
+    background-color: var(--primary-bg-color);
+}
+
+.app-container{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container{
+    width: 40vw;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .logo{
+    display: flex;
+    align-items: center;
+}
+
+#header .theme-change{
+    background-color: unset;
+    border: unset;
+    color: var(--primary-text-color);
+    display: flex;
+    align-items: center;
+}
+
+#header .theme-change:hover{
+    cursor: pointer;
+}
+
+.main .user-details{
+    display: grid;
+    grid-template-columns: 100px 150px 150px;
+    grid-template-areas: 
+    "avatar name date"
+    "avatar username username"
+    "avatar bio bio"
+    "avatar stats stats"
+    "avatar location twitter"
+    "avatar org org"
+    ;
+}
+
+.user-details .user-avatar{
+    width: 100%;
+    height: auto;
+    grid-area: avatar;
+}
+
+.user-details .name {
+    grid-area: name;
+}
+
+.user-details .joining-date{
+    grid-area: date;
+}
+
+.user-details .username{
+    grid-area: username;
+}
+
+.user-details .user-bio{
+    grid-area: bio;
+}
+
+.user-details .user-stats{
+    grid-area: stats;
+}
+
+.user-details .user-location{
+    grid-area: location;
+}
+
+.user-details .twitter-handle{
+    grid-area: twitter;
+}
+
+.user-details .organization{
+    grid-area: org;
+}
+
+.main .search-container {
+    height: 3rem;
+    background-color: var(--secondary-bg-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--regular-spacing) 0;
+}
+
+.main .search-container .search-box{
+    height: 100%;
+    width: 100%;
+    padding: var(--regular-spacing);
+    margin: 0 var(--regular-spacing);
+    background-color: unset;
+    border: none;
+}
+
+input{
+    color: var(--primary-text-color);
+    background-color: unset;
+}
+
+input:focus-visible{
+    outline: none;
+}
