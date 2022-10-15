@@ -1,3 +1,4 @@
+//FETCHING AND DISPLAYING USER DETAILS
 const gitHubLink = (username) => `https://github.com/${username}`;
 
 const displayUserDetails = async (userDetails)  => {

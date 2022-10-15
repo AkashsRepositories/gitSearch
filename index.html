@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>
     <title>GitSearch</title>
 </head>
 <body>
@@ -16,9 +15,8 @@
                 <h1 class="logo">
                     GitSearch 
                 </h1>
-                <button class="theme-change">
+                <button id="theme-change">
                     Light
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFFFFF" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="60" fill="#FFFFFF" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle><line x1="128" y1="36" x2="128" y2="16" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="62.9" y1="62.9" x2="48.8" y2="48.8" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="36" y1="128" x2="16" y2="128" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="62.9" y1="193.1" x2="48.8" y2="207.2" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="128" y1="220" x2="128" y2="240" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="193.1" y1="193.1" x2="207.2" y2="207.2" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="220" y1="128" x2="240" y2="128" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="193.1" y1="62.9" x2="207.2" y2="48.8" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg>
                 </button>
             </header>
             <main class="main">
@@ -34,9 +32,10 @@
                      <h4 class="username">@username</h4>
                      <p class="github-link-container">
                         <a href="#" class="github-link" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFFFFF" viewBox="0 0 256 256"><rect width="20" height="20" fill="none"></rect><path d="M122.3,71.4l19.8-19.8a44.1,44.1,0,0,1,62.3,62.3l-28.3,28.2a43.9,43.9,0,0,1-62.2,0" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path><path d="M133.7,184.6l-19.8,19.8a44.1,44.1,0,0,1-62.3-62.3l28.3-28.2a43.9,43.9,0,0,1,62.2,0" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFFFFF" viewBox="0 0 256 256"><rect width="20" height="20" fill="none"></rect><path d="M122.3,71.4l19.8-19.8a44.1,44.1,0,0,1,62.3,62.3l-28.3,28.2a43.9,43.9,0,0,1-62.2,0" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path><path d="M133.7,184.6l-19.8,19.8a44.1,44.1,0,0,1-62.3-62.3l28.3-28.2a43.9,43.9,0,0,1,62.2,0" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg>
                             Visit 
                         </a>
+
                      </p>
                      <p class="user-bio">Not Available</p>
                      <section class="user-stats">
@@ -61,5 +60,7 @@
         </section>   
     </section>
     
+    <script src="app.js"></script>
+    <script src="theme.js"></script>
 </body>
 </html>

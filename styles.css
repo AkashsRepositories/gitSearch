@@ -8,10 +8,6 @@
 }
 
 :root{
-    --primary-text-color: rgb(239 243 247 / 1);
-    --primary-bg-color: rgb(20 28 47 / 1);
-    --secondary-bg-color: rgb(31 42 72 / 1);
-    --button-bg: #007afd;
     --highlight: #0561cb;
 
     --small: 0.5rem;
@@ -31,6 +27,24 @@
     --regular-spacing: 1rem;
     --medium-spacing: 1.5rem;
     --large-spacing: 2rem;
+}
+
+/* theme change */
+body.dark-theme{
+    --primary-text-color: rgb(239 243 247 / 1);
+    --primary-bg-color: rgb(20 28 47 / 1);
+    --secondary-bg-color: rgb(31 42 72 / 1);
+    --button-bg: #007afd;
+    --stroke-color: rgb(239 243 247 / 1);
+    --button-text-color: rgb(239 243 247 / 1);
+}
+body.light-theme {
+    --primary-text-color: rgb(6, 40, 61);
+    --primary-bg-color: rgb(37, 109, 133);
+    --secondary-bg-color: rgb(223, 246, 255);
+    --button-bg: #007afd;
+    --stroke-color: rgb(6, 40, 61);
+    --button-text-color: rgb(223, 246, 255);
 }
 
 /* defining value of 1rem */
@@ -70,17 +84,17 @@ body *{
     font-family: var(--font-family-2);
 }
 
-#header .theme-change{
+#header #theme-change{
     background-color: unset;
     border: unset;
-    color: var(--primary-text-color);
+    color: var(--button-text-color);
     display: flex;
     align-items: center;
     text-transform: uppercase;
     letter-spacing: 4px;
 }
 
-#header .theme-change:hover{
+#header #theme-change:hover{
     cursor: pointer;
 }
 
@@ -202,9 +216,13 @@ input[type=search]:focus-visible{
     font-size: medium;
     padding: var(--few-spacing);
     border-radius: 10px;
-    color: var(--primary-text-color);
+    color: var(--button-text-color);
     background-color: var(--button-bg);
     border: unset;
+}
+
+svg *{
+    stroke: var(--stroke-color);
 }
 
 /* tablet responsive */
