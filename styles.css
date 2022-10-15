@@ -38,14 +38,7 @@ body.dark-theme{
     --stroke-color: rgb(239 243 247 / 1);
     --button-text-color: rgb(239 243 247 / 1);
 }
-body.light-theme {
-    --primary-text-color: rgb(6, 40, 61);
-    --primary-bg-color: rgb(37, 109, 133);
-    --secondary-bg-color: rgb(223, 246, 255);
-    --button-bg: #007afd;
-    --stroke-color: rgb(6, 40, 61);
-    --button-text-color: rgb(223, 246, 255);
-}
+
 
 /* defining value of 1rem */
 html{
@@ -273,5 +266,16 @@ svg *{
     .github-link > svg {
         width: 10px;
         height: 10px;
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    body.light-theme {
+        --primary-text-color: rgb(6, 40, 61);
+        --primary-bg-color: rgb(37, 109, 133);
+        --secondary-bg-color: rgb(223, 246, 255);
+        --button-bg: #007afd;
+        --stroke-color: rgb(6, 40, 61);
+        --button-text-color: rgb(223, 246, 255);
     }
 }
