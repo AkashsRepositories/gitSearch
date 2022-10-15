@@ -40,11 +40,11 @@ const displayUserDetails = async (userDetails)  => {
 
 //that's where we do api call for user details
 const loadUserData = async (username) => {
-    const inputBox = document.querySelector('.search-container > input.search-box');
     
     const response = await fetch(`https://api.github.com/users/${username}`);
     if(response.status === 404) {
         alert('User Not Found!')
+        if(username == 'AkashsRepositories') return;
         loadUserData('AkashsRepositories');
         return;
     }
@@ -61,12 +61,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
     const inputBox = document.querySelector('.search-container > input.search-box');
     inputBox.addEventListener('change', () => {
-        loadUserData(inputBox.value);
+        if(inputBox.value)
+            loadUserData(inputBox.value);
     });
 
     const searchButton = document.querySelector('.search-container > button.search-button');
     searchButton.addEventListener('click', () => {
-        loadUserData(inputBox.value);
+        if(inputBox.value)
+            loadUserData(inputBox.value);
     });
 
     console.log(inputBox, searchButton);
