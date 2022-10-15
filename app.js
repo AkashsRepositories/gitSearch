@@ -57,7 +57,6 @@ const loadUserData = async (username) => {
     }
 
     const details = await response.json();
-    console.log(await details);
     displayUserDetails(await details);
 }
 
@@ -78,5 +77,4 @@ document.addEventListener('DOMContentLoaded', function(){
             loadUserData(inputBox.value);
     });
 
-    console.log(inputBox, searchButton);
 });
