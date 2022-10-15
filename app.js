@@ -1,3 +1,5 @@
+const gitHubLink = (username) => `https://github.com/${username}`;
+
 const displayUserDetails = async (userDetails)  => {
     const detailsContainer = document.querySelector("main > .user-details");
 
@@ -13,8 +15,12 @@ const displayUserDetails = async (userDetails)  => {
     let creationDate = userDetails.created_at;
     date.textContent = "Joined " +  (creationDate? creationDate.split('T')[0]: "--:--:--");
 
-    const username = detailsContainer.querySelector('.username');
-    username.textContent = "@" + userDetails.login?? " ";
+    const usernameElem = detailsContainer.querySelector('.username');
+    const username = userDetails.login;
+    usernameElem.textContent = "@" + username?? " ";
+
+    const githubLinkContainer = detailsContainer.querySelector('.github-link');
+    githubLinkContainer.setAttribute("href", username?gitHubLink(username): "#");
 
     const bioContainer = detailsContainer.querySelector('.user-bio');
     bioContainer.textContent = userDetails.bio?? "This profile has no bio";

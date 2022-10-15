@@ -94,7 +94,7 @@ body *{
     grid-template-columns: 1fr 1.5fr 1.5fr;
     grid-template-areas: 
     "avatar name date"
-    "avatar username username"
+    "avatar username visit"
     "avatar bio bio"
     "avatar stats stats"
     "avatar location twitter"
@@ -118,11 +118,24 @@ body *{
 
 .user-details .joining-date{
     grid-area: date;
+    text-align: end;
 }
 
 .user-details .username{
     grid-area: username;
     color: #0561cb;
+}
+
+.user-details .github-link-container{
+    grid-area: visit;
+    text-align: end;
+    display: grid;
+    align-items: center;
+}
+
+.user-details .github-link-container .github-link{
+    color: #0561cb;
+    font-weight: 600;
 }
 
 .user-details .user-bio{
@@ -204,6 +217,11 @@ input[type=search]:focus-visible{
     html{
         font-size: 15px;
     }
+
+    .github-link > svg {
+        width: 15px;
+        height: 15px;
+    }
 }
 
 /* mobile responsive */
@@ -222,7 +240,7 @@ input[type=search]:focus-visible{
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
             "avatar name name"
-            "avatar username username"
+            "avatar username visit"
             "avatar date date"
             "bio bio bio"
             "bio bio bio"
@@ -232,5 +250,10 @@ input[type=search]:focus-visible{
             "location location location"
             "twitter twitter twitter"
             "company company company";
+    }
+
+    .github-link > svg {
+        width: 10px;
+        height: 10px;
     }
 }
