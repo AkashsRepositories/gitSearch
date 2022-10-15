@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -8,27 +11,53 @@
     --primary-text-color: rgb(239 243 247 / 1);
     --primary-bg-color: rgb(20 28 47 / 1);
     --secondary-bg-color: rgb(31 42 72 / 1);
+    --button-bg: #007afd;
+    --highlight: #0561cb;
 
+    --small: 0.5rem;
+    --regular: 1rem;
+    --medium: 1.25rem;
+    --large: 2rem;
+    --very-large: 3rem;
+
+    /* font weights available - 300, 400, 600 */
+    --font-family-1: 'Quicksand', sans-serif;
+
+    /* font weights available - 200, 400, 600 */
+    --font-family-2: 'Roboto Mono', monospace;
+ 
+    --very-few-spacing: 0.2rem;
+    --few-spacing: 0.5rem;
     --regular-spacing: 1rem;
     --medium-spacing: 1.5rem;
     --large-spacing: 2rem;
 }
 
+/* defining value of 1rem */
+html{
+    font-size: 20px;
+}
+
 body{
+    padding: var(--large-spacing) 0;
     color: var(--primary-text-color);
     background-color: var(--primary-bg-color);
 }
 
+body *{
+    font-family: var(--font-family-1);
+}
+
 .app-container{
-    min-height: 100vh;
-    width: 100vw;
+    min-height: 80vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .inner-container{
-    width: 40vw;
+    width: 60%;
 }
 
 #header{
@@ -37,12 +66,18 @@ body{
     align-items: center;
 }
 
+#header *{  
+    font-family: var(--font-family-2);
+}
+
 #header .theme-change{
     background-color: unset;
     border: unset;
     color: var(--primary-text-color);
     display: flex;
     align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 #header .theme-change:hover{
@@ -51,7 +86,9 @@ body{
 
 .main .user-details{
     background-color: var(--secondary-bg-color);
-    padding: var(--large-spacing);
+    padding: var(--regular-spacing);
+    gap: var(--regular-spacing);
+
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr;
@@ -63,7 +100,7 @@ body{
     "avatar location twitter"
     "avatar company company"
     ;
-    gap: var(--regular-spacing);
+    align-items: center;
 }
 
 .user-details .user-avatar{
@@ -72,6 +109,7 @@ body{
     grid-area: avatar;
     /* round  image*/
     border-radius: 50%;
+    align-self: start;
 }
 
 .user-details .name {
@@ -84,6 +122,7 @@ body{
 
 .user-details .username{
     grid-area: username;
+    color: #0561cb;
 }
 
 .user-details .user-bio{
@@ -122,6 +161,7 @@ body{
     justify-content: space-between;
     align-items: center;
     margin: var(--regular-spacing) 0;
+    padding: 0 var(--regular-spacing);
 }
 
 .main .search-container .search-box{
@@ -131,13 +171,66 @@ body{
     margin: 0 var(--regular-spacing);
     background-color: unset;
     border: none;
+    font-size: var(--regular);
+    font-style: italic;
+    letter-spacing: var(--very-few-spacing);
 }
 
-input{
+input[type=search]{
     color: var(--primary-text-color);
     background-color: unset;
 }
 
-input:focus-visible{
+input[type=search]:focus-visible{
     outline: none;
+}
+
+.main .search-container .search-button{
+    font-size: medium;
+    padding: var(--few-spacing);
+    border-radius: 10px;
+    color: var(--primary-text-color);
+    background-color: var(--button-bg);
+    border: unset;
+}
+
+/* tablet responsive */
+@media (width <= 800px){
+    body{
+        padding: var(--large-spacing) 0;
+    }
+
+    /* reduce font */
+    html{
+        font-size: 15px;
+    }
+}
+
+/* mobile responsive */
+@media (width <= 525px) {
+    html{
+        font-size: 13px;
+    }
+    body{
+        padding: var(--small-spacing) 0;
+    }
+
+    .inner-container {
+        width: 85%;
+    }
+    .main .user-details{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "avatar name name"
+            "avatar username username"
+            "avatar date date"
+            "bio bio bio"
+            "bio bio bio"
+            "bio bio bio"
+            "stats stats stats"
+            "stats stats stats"
+            "location location location"
+            "twitter twitter twitter"
+            "company company company";
+    }
 }

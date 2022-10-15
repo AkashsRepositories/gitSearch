@@ -41,14 +41,11 @@ const displayUserDetails = async (userDetails)  => {
 //that's where we do api call for user details
 const loadUserData = async (username) => {
     const inputBox = document.querySelector('.search-container > input.search-box');
-    // username = username?? inputBox.value;   
     
-    // console.log(inputBox, inputBox.value, username);
-console.log(username);
     const response = await fetch(`https://api.github.com/users/${username}`);
     if(response.status === 404) {
-        alert('user not found')
-        loadUserData('github');
+        alert('User Not Found!')
+        loadUserData('AkashsRepositories');
         return;
     }
 
@@ -60,7 +57,7 @@ console.log(username);
 //showing github's profile data as default
 document.addEventListener('DOMContentLoaded', function(){
     
-    loadUserData("octocat");
+    loadUserData("AkashsRepositories");
 
     const inputBox = document.querySelector('.search-container > input.search-box');
     inputBox.addEventListener('change', () => {
